@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Open New Account</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body>
+       
+        <h:form>
+            <h3>Create a new checking account!</h3>
+            
+            <p>Please enter your Name:<br></br>
+                <h:inputText id="name" required ="true" 
+                             requiredMessage="The name field cannot be empty"
+                        title="Please enter your Name"
+                        value="#{createNewAccount.name}">
+                         
+                </h:inputText>
+            </p>
+            
+            <p>Please enter your Social Security Number:<br></br>
+                <h:inputText id="ssn" required ="true" 
+                             requiredMessage="The SSN field cannot be empty"
+                        title="Please enter your Social Security Number"
+                        value="#{createNewAccount.ssn}"
+                        validatorMessage="Pleause use a 
+                        correct format for your social security number">
+                    <f:validateLength maximum="5" minimum="5" />
+                </h:inputText>
+            </p>
+            
+            <p>How much of the initial deposit you want make?<br></br>
+               <h:inputText
+                   id="balance" required ="true" 
+                   requiredMessage="The amount of deposit cannot be empty"
+                    title="How much you will deposit int your new account?"
+                    value="#{createNewAccount.balance}">
+               </h:inputText>
+            </p>
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="confirmation1.xhtml" />
+            </p>
+
+        </h:form>
+        
+    </h:body>
+</html>

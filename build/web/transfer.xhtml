@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Transfer</title>
+    </head>
+    <body>
+        <h:form> 
+             
+            <p>
+                Transfer Money From:<br></br>
+             <h:selectOneMenu id="from" required="true" style="width:150px" 
+                                 value="#{login.theLoginAccount.fromAccount}">  
+                 <f:selectItems value="#{login.theLoginAccount.bankIDs}" />  
+                </h:selectOneMenu>
+                
+                <br></br><br></br>
+                
+                Transfer Money To:<br></br>
+                <h:selectOneMenu id="to" required="true" style="width:150px" 
+                                 value="#{login.theLoginAccount.toAccount}">  
+                    <f:selectItems value="#{login.theLoginAccount.bankIDs}" />  
+                </h:selectOneMenu>
+                
+                <br></br><br></br>
+                
+                Transfer Amount<br></br>
+                <h:inputText id="amount" 
+                             required ="true" 
+                             requiredMessage="The Amount field cannot be empty"
+                             value="#{login.theLoginAccount.transferAmount}" />
+             
+                <br></br><br></br>
+                <h:commandButton id="transfer" value="Complete"  
+                                 action="confirmationTransfer.xhtml" />
+                   
+            </p>
+             
+        
+        
+        </h:form>
+    </body>
+</html>
